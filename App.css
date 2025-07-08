@@ -1,0 +1,403 @@
+/* Modern App-wide Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #232946 0%, #3e2f5b 100%);
+  min-height: 100vh;
+  color: #eaeaea;
+  line-height: 1.6;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(255,255,255,0.08) 0%, rgba(35,41,70,0.95) 100%);
+}
+
+/* Glassmorphism Effects */
+.glass-card {
+  background: rgba(40, 44, 72, 0.55);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-radius: 22px;
+  box-shadow: 0 12px 36px 0 rgba(31, 38, 135, 0.22);
+  transition: box-shadow 0.22s cubic-bezier(.4,2,.3,1), transform 0.22s cubic-bezier(.4,2,.3,1);
+}
+
+.glass-card:hover {
+  box-shadow: 0 20px 48px 0 rgba(102, 126, 234, 0.18);
+  transform: translateY(-4px) scale(1.03);
+}
+
+.glass-button {
+  background: rgba(40, 44, 72, 0.35);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  color: #fff;
+  padding: 14px 28px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(.4,2,.3,1);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(35,41,70,0.16);
+}
+
+.glass-button:hover {
+  background: rgba(40, 44, 72, 0.45);
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 12px 32px rgba(35,41,70,0.22);
+}
+
+/* Modern Gradients */
+.gradient-primary {
+  background: linear-gradient(135deg, #232946 0%, #3e2f5b 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, #5f72bd 0%, #9a5be4 100%);
+}
+
+.gradient-success {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.gradient-warning {
+  background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+}
+
+/* Smooth Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Modern Shadows */
+.shadow-soft {
+  box-shadow: 0 4px 6px -1px rgba(35,41,70,0.13), 0 2px 4px -1px rgba(35,41,70,0.09);
+}
+
+.shadow-medium {
+  box-shadow: 0 10px 15px -3px rgba(35,41,70,0.13), 0 4px 6px -2px rgba(35,41,70,0.09);
+}
+
+.shadow-large {
+  box-shadow: 0 20px 25px -5px rgba(35,41,70,0.13), 0 10px 10px -5px rgba(35,41,70,0.09);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glass-card {
+    margin: 10px;
+    padding: 20px;
+  }
+}
+
+/* Loading States */
+.loading-skeleton {
+  background: linear-gradient(90deg, #232946 25%, #3e2f5b 50%, #232946 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(165, 180, 252, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(165, 180, 252, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(165, 180, 252, 0.5);
+}
+
+/* Button hover/active animations */
+.btn, .submit-btn, .logout-btn, .auth-button, .search-btn, .comment-btn, .save-btn, .download-btn, .action-btn, .close-message, .notfound-home-btn, .back-btn, .join-group-btn, .leave-group-btn, .delete-post-btn, .blog-btn, .edit, .delete, .share-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn:hover, .submit-btn:hover, .logout-btn:hover, .auth-button:hover, .search-btn:hover, .comment-btn:hover, .save-btn:hover, .download-btn:hover, .action-btn:hover, .close-message:hover, .notfound-home-btn:hover, .back-btn:hover, .join-group-btn:hover, .leave-group-btn:hover, .delete-post-btn:hover, .blog-btn:hover, .edit:hover, .delete:hover, .share-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(109, 40, 217, 0.3);
+}
+.btn:active, .submit-btn:active, .logout-btn:active, .auth-button:active, .search-btn:active, .comment-btn:active, .save-btn:active, .download-btn:active, .action-btn:active, .close-message:active, .notfound-home-btn:active, .back-btn:active, .join-group-btn:active, .leave-group-btn:active, .delete-post-btn:active, .blog-btn:active, .edit:active, .delete:active, .share-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.10);
+}
+
+/* Card hover effect */
+.group-card, .task-card, .auth-card, .profile-card, .blog-card, .metric-card, .insight-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.group-card:hover, .task-card:hover, .auth-card:hover, .profile-card:hover, .blog-card:hover, .metric-card:hover, .insight-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(109, 40, 217, 0.2);
+}
+
+/* Accessible focus states */
+.btn:focus, .submit-btn:focus, .logout-btn:focus, .auth-button:focus, .search-btn:focus, .comment-btn:focus, .save-btn:focus, .download-btn:focus, .action-btn:focus, .close-message:focus, .notfound-home-btn:focus, .back-btn:focus, .join-group-btn:focus, .leave-group-btn:focus, .delete-post-btn:focus, .blog-btn:focus, .edit:focus, .delete:focus, .share-btn:focus,
+.footer-link:focus, .footer-social-icon:focus {
+  outline: 2px solid rgba(109, 40, 217, 0.5);
+  outline-offset: 2px;
+}
+
+.footer-link {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.13);
+}
+
+.footer-link:focus {
+  background: #ffd200;
+  color: #222;
+}
+
+.footer-social-icon:focus {
+  color: #ffd200;
+  background: rgba(255,255,255,0.13);
+  border-radius: 50%;
+}
+
+/* Ensure good color contrast for text on dark backgrounds */
+body, .footer-glass, .notfound-content, .group-card, .task-card, .auth-card, .profile-card, .blog-card, .metric-card, .insight-card {
+  color: #f5f5f7;
+}
+
+.section-divider {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #764ba2 0%, #43e97b 100%);
+  border-radius: 2px;
+  margin: 2.5rem 0 2rem 0;
+  box-shadow: 0 2px 12px rgba(102, 126, 234, 0.13);
+  opacity: 0.85;
+}
+
+.section-heading {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #764ba2;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 2px 12px rgba(102, 126, 234, 0.10);
+  background: linear-gradient(90deg, #764ba2 0%, #43e97b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-effect {
+  box-shadow: 0 0 16px 2px #764ba2, 0 0 32px 8px #43e97b33;
+  animation: glowPulse 2.2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 8px 2px #764ba2, 0 0 16px 4px #43e97b33; }
+  100% { box-shadow: 0 0 24px 6px #764ba2, 0 0 48px 16px #43e97b33; }
+}
+
+.animate-glow {
+  animation: glowPulse 1.5s infinite alternate;
+}
+
+/* Enhanced global animations */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced button animations */
+.btn-animate {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-animate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(109, 40, 217, 0.3);
+}
+
+/* Enhanced card animations */
+.card-animate {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-animate:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(109, 40, 217, 0.2);
+}
+
+/* Enhanced form animations */
+.form-input-animate {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input-animate:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.1);
+}
+
+/* Enhanced loading animations */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Enhanced focus styles */
+*:focus {
+  outline: 2px solid rgba(109, 40, 217, 0.5);
+  outline-offset: 2px;
+}
+
+/* Enhanced selection */
+::selection {
+  background: rgba(109, 40, 217, 0.3);
+  color: #ffffff;
+}
+
+/* Enhanced text selection */
+::-moz-selection {
+  background: rgba(109, 40, 217, 0.3);
+  color: #ffffff;
+}
+
+/* Remove theme-switcher-container styles */
+.theme-switcher-container {
+  display: none !important;
+}
+
+/* Footer polish for visibility */
+.footer, .home-footer {
+  background: linear-gradient(135deg, rgba(30, 27, 60, 0.98) 0%, rgba(60, 70, 180, 0.95) 100%);
+  color: #e0e7ff !important;
+  border-top: 2px solid #6d28d9;
+  padding: 2rem 0;
+  margin-top: 4rem;
+  position: relative;
+  overflow: hidden;
+  font-size: 1.1rem;
+}
+.footer a, .home-footer a {
+  color: #a5b4fc !important;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 1rem;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+.footer a:hover, .home-footer a:hover {
+  color: #fff !important;
+  text-shadow: 0 0 10px #a5b4fc;
+}
+.footer-copy, .home-footer .footer-copy {
+  color: #a5b4fc;
+  font-size: 0.95rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  opacity: 0.9;
+}
+.footer-menu, .home-footer .footer-menu {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 700px) {
+  .footer, .home-footer {
+    font-size: 1rem;
+    padding: 1.2rem 0.5rem;
+  }
+  .footer-menu, .home-footer .footer-menu {
+    gap: 0.7rem;
+  }
+}
